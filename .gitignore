@@ -8,3 +8,4 @@
 /tmp/
 /spec/internal/db/*.sqlite
 /Gemfile.lock
+/gemfiles/*.lock
