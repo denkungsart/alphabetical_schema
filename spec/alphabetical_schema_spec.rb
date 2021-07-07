@@ -1,5 +1,6 @@
 RSpec.describe AlphabeticalSchema do
-  let(:schema_path) { "spec/internal/db/schema.rb" }
+  let(:schema_path) { "#{__dir__}/internal/db/schema.rb" }
+  let(:expected_schema_path) { "#{__dir__}/expected_schema.rb" }
 
   around do |example|
     original_schema = File.read(schema_path)
@@ -8,14 +9,16 @@ RSpec.describe AlphabeticalSchema do
   end
 
   it "creates an alphabetically sorted schema" do
-    expected_lines = File.readlines("#{__dir__}/expected_schema/schema_6.1.rb")
-
     Dir.chdir("#{__dir__}/internal") do
       system("rake db:migrate")
     end
 
+    expected_lines = File.readlines(expected_schema_path)
     generated_lines = File.readlines(schema_path)
+
     generated_lines.zip(expected_lines).each do |generated, expected|
+      next if generated.start_with?("#")
+
       expect(generated).to eq(expected)
     end
   end
