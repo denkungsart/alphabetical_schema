@@ -1,0 +1,3 @@
+test:
+  service: Disk
+  root: /Users/fabian/code/gems/alphabetical_schema/tmp/storage

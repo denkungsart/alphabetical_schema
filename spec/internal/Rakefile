@@ -1,0 +1,8 @@
+require "bundler"
+require "combustion"
+require "rails"
+
+Combustion.path = "."
+Combustion.initialize! :all
+
+Rails.application.load_tasks
