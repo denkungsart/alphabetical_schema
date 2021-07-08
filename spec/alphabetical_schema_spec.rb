@@ -16,8 +16,9 @@ RSpec.describe AlphabeticalSchema do
     expected_lines = File.readlines(expected_schema_path)
     generated_lines = File.readlines(schema_path)
 
-    generated_lines.zip(expected_lines).each do |generated, expected|
-      next if generated.start_with?("#")
+    expected_lines.zip(generated_lines).each do |expected, generated|
+      # Disregard differences in comments in schema.rb as those regularly change between rails versions
+      next if generated&.start_with?("#")
 
       expect(generated).to eq(expected)
     end
