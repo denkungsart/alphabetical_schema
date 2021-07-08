@@ -5,7 +5,7 @@ require "alphabetical_schema/version"
 module AlphabeticalSchema
   class SortedConnection < SimpleDelegator
     def columns(table_name)
-      __getobj__.columns(table_name).sort_by(&:name)
+      super.sort_by(&:name)
     end
   end
 
