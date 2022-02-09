@@ -1,6 +1,14 @@
 RSpec.describe AlphabeticalSchema do
   let(:schema_path) { "#{__dir__}/internal/db/schema.rb" }
-  let(:expected_schema_path) { "#{__dir__}/expected_schema.rb" }
+  let(:version_specific_schema_path) { "#{__dir__}/expected_schemas/#{Rails::VERSION::MAJOR}_#{Rails::VERSION::MINOR}.rb" }
+
+  let(:expected_schema_path) do
+    if File.exist?(version_specific_schema_path)
+      version_specific_schema_path
+    else
+      "#{__dir__}/expected_schemas/default.rb"
+    end
+  end
 
   around do |example|
     original_schema = File.read(schema_path)
