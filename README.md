@@ -14,6 +14,16 @@ gem 'alphabetical_schema'
 
 Run `rake db:migrate`.
 
+## Changelog
+
+### 0.1.1 (2022-04-28)
+
+* Relax rails dependency to allow rails 7
+
+### 0.1.0 (2021-07-08)
+
+* Initial release
+
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
