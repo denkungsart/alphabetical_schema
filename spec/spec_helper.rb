@@ -1,5 +1,7 @@
 require "bundler"
 
+require "active_support/all"
+
 Bundler.require :default, :development
 
 Combustion.initialize! :all
