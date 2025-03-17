@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require "alphabetical_schema/version"
+require "delegate"
 
 module AlphabeticalSchema
   class SortedConnection < SimpleDelegator
