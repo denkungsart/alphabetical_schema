@@ -16,6 +16,10 @@ Run `rake db:migrate`.
 
 ## Changelog
 
+### 0.1.2 (2025-03-17)
+
+* Relax rails dependency to allow rails 8
+
 ### 0.1.1 (2022-04-28)
 
 * Relax rails dependency to allow rails 7
