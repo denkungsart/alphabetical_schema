@@ -16,6 +16,11 @@ Run `rake db:migrate`.
 
 ## Changelog
 
+### 0.1.3 (2026-10-06)
+
+* Relax rails dependency to allow rails 8.1
+* Support the batched column lookup of upcoming rails versions
+
 ### 0.1.2 (2025-03-17)
 
 * Relax rails dependency to allow rails 8
