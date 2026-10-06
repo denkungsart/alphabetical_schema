@@ -7,5 +7,6 @@
 /spec/reports/
 /tmp/
 /spec/internal/db/*.sqlite
+/spec/internal/db/*.sqlite-*
 /Gemfile.lock
 /gemfiles/*.lock
